@@ -4,6 +4,10 @@ module.exports = {
     './src/**/*.tsx',
     './index.html',
   ],
-  theme: {},
+  theme: {
+    fontFamily: {
+      sans: ['Ubuntu','sans-serif']
+    },
+  },
   plugins: [],
 }
