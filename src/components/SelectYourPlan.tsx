@@ -47,19 +47,19 @@ export const SelectYourPlan = () => {
             <p className='text-[#9699ab]'>You have the option of the monthly billing.</p>
           </div>
           <div className='flex flex-row justify-between gap-[32px]'>
-            <div className='flex flex-col border w-[130px] h-40 relative rounded-lg'>
+            <div className='flex flex-col border w-[130px] h-40 relative rounded-lg hover:border-[#473dff] active:bg-[#f0f6ff] cursor-pointer'>
               <img src={Arcade} alt="" className='w-10 absolute left-5 top-5'/>
-                <p className='absolute left-5 bottom-9'>Arcade</p>
+                <p className='absolute left-5 bottom-9 font-extrabold text-[#02295a]'>Arcade</p>
                 <span className='absolute left-5 bottom-3 text-[#9699ab]'>$9/mo</span>
             </div>
-            <div className='flex flex-col border w-[130px] h-40 relative rounded-lg'>
+            <div className='flex flex-col border w-[130px] h-40 relative rounded-lg hover:border-[#473dff] focus:bg-[#f0f6ff] cursor-pointer'>
               <img src={Advanced} alt="" className='w-10 absolute left-5 top-5'/>
-              <p className='absolute left-5 bottom-9'>Advanced</p>
+              <p className='absolute left-5 bottom-9 font-extrabold text-[#02295a]'>Advanced</p>
               <span className='absolute left-5 bottom-3 text-[#9699ab]'>$12/mo</span>
             </div>
-            <div className='flex flex-col border w-[130px] h-40 relative rounded-lg'>
+            <div className='flex flex-col border w-[130px] h-40 relative rounded-lg hover:border-[#473dff] focus:bg-[#f0f6ff] cursor-pointer'>
               <img src={Pro} alt="" className='w-10 absolute left-5 top-5'/>
-              <p className='absolute left-5 bottom-9'>Pro</p>
+              <p className='absolute left-5 bottom-9 font-extrabold text-[#02295a]'>Pro</p>
               <span className='absolute left-5 bottom-3 text-[#9699ab]'>$15/mo</span>
             </div>
           </div>
