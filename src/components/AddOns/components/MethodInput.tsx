@@ -19,8 +19,8 @@ export const MethodInput = forwardRef<
           <div>
             <input id={id} type="radio" {...props} name="paymentMethod" ref={ref} />
           </div>
-          <div className=''>
-            <strong className=''>
+          <div className='text-[#9699ab]'>
+            <strong className='text-[#02295a]'>
               {label}
             </strong>
             <br />
@@ -29,7 +29,7 @@ export const MethodInput = forwardRef<
 
         </div>
         
-        <div className=''>
+        <div className='text-[#473dff]'>
           {price}
         </div>
 
