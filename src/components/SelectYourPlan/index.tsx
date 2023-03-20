@@ -1,10 +1,19 @@
-import '../styles/global.css'
-import SideBar from '../assets/bg-sidebar-desktop.svg'
-import Arcade from  '../assets/icon-arcade.svg'
-import Advanced from  '../assets/icon-advanced.svg'
-import Pro from  '../assets/icon-pro.svg'
+import '../../styles/global.css'
+import SideBar from '../../assets/bg-sidebar-desktop.svg'
+import { RadioComponent } from './components/RadioComponent'
+import { useNavigate } from 'react-router-dom'
 
 export const SelectYourPlan = () => {
+
+  const navigate = useNavigate()
+
+  const NextScreen = () => {
+    navigate('/addons')
+  }
+  const previousScreen = () => {
+    navigate('/')
+  }
+
   return (
     <div className='w-screen h-screen bg-[#f0f6ff] flex justify-center items-center'>
       <div className='bg-white p-5 w-[900px] rounded-xl flex'>
@@ -46,7 +55,8 @@ export const SelectYourPlan = () => {
             <h1 className='text-3xl font-extrabold text-[#02295a]'>Select your plan</h1>
             <p className='text-[#9699ab]'>You have the option of the monthly billing.</p>
           </div>
-          <div className='flex flex-row justify-between gap-[32px]'>
+          <RadioComponent />
+          {/*<div className='flex flex-row justify-between gap-[32px]'>
             <div className='flex flex-col border w-[130px] h-40 relative rounded-lg hover:border-[#473dff] active:bg-[#f0f6ff] cursor-pointer'>
               <img src={Arcade} alt="" className='w-10 absolute left-5 top-5'/>
                 <p className='absolute left-5 bottom-9 font-extrabold text-[#02295a]'>Arcade</p>
@@ -62,7 +72,7 @@ export const SelectYourPlan = () => {
               <p className='absolute left-5 bottom-9 font-extrabold text-[#02295a]'>Pro</p>
               <span className='absolute left-5 bottom-3 text-[#9699ab]'>$15/mo</span>
             </div>
-          </div>
+  </div>*/}
           <div className='w-full py-4 flex justify-center gap-5 mt-6 rounded-lg'>
             <span className='font-extrabold text-[#02295a]' >Monthly</span>
             <input
@@ -74,8 +84,18 @@ export const SelectYourPlan = () => {
             <span className='text-[#9699ab]'>Yearly</span>
           </div>
           <div className='flex justify-between pt-20'>
-            <button className='text-[#02295a] font-semibold rounded-lg'>Go back</button>
-            <button className='border bg-[#02295a] p-3 text-white font-semibold rounded-lg'>Next Step</button>
+            <button 
+              className='text-[#02295a] font-semibold rounded-lg hover:text-[#8619eb]'
+              onClick={previousScreen}
+            >
+              Go back
+            </button>
+            <button 
+              onClick={NextScreen}
+              className='border bg-[#02295a] p-3 text-white font-semibold rounded-lg'
+            >
+              Next Step
+            </button>
           </div>
         </div>
       </div>
