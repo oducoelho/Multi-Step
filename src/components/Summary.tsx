@@ -1,7 +1,15 @@
 import '../styles/global.css'
 import SideBar from '../assets/bg-sidebar-desktop.svg'
+import { useNavigate } from 'react-router-dom'
 
 export const Summary = () => {
+
+  const navigate = useNavigate()
+
+  const NextScreen = () => {
+    navigate('/addons')
+  }
+
   return (
     <div className='w-screen h-screen bg-[#f0f6ff] flex justify-center items-center'>
       <div className='bg-white p-5 w-[900px] rounded-xl relative flex'>
@@ -70,8 +78,17 @@ export const Summary = () => {
             </div>
           </div>
           <div className='flex justify-between pt-20'>
-            <button className='text-[#02295a] font-semibold rounded-lg'>Go back</button>
-            <button className='border bg-[#02295a] p-3 text-white font-semibold rounded-lg'>Next Step</button>
+          <button 
+              className='text-[#02295a] font-semibold rounded-lg hover:text-[#8619eb]'
+              onClick={NextScreen}
+            >
+              Go back
+            </button>
+            <button 
+              className='border bg-[#02295a] p-3 text-white font-semibold rounded-lg'
+            >
+              Confirm
+            </button>
           </div>
         </div>
       </div>

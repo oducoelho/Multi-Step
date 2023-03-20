@@ -1,7 +1,7 @@
 import '../styles/global.css'
 import SideBar from '../assets/bg-sidebar-desktop.svg'
 import { zodResolver } from '@hookform/resolvers/zod'
-import { useForm, FormProvider } from 'react-hook-form'
+import { useForm } from 'react-hook-form'
 import { z } from 'zod'
 import { useNavigate } from 'react-router-dom'
 
@@ -11,7 +11,9 @@ const ClaimYourInformations = z.object({
   number: z.string().min(1, 'inform your number'),
 })
 
-type claimUsernameFormData  = z.infer<typeof ClaimYourInformations>
+export type OrderData = z.infer<typeof ClaimYourInformations>
+
+type claimUsernameFormData  = OrderData
 
 export const YourInfos = () => {
   const {
@@ -24,8 +26,10 @@ export const YourInfos = () => {
 
   const navigate = useNavigate()
 
-  const SaveProfile = () => {
-    navigate('/selectyourplan')
+  const SaveProfile = (data: claimUsernameFormData) => {
+    navigate('/selectyourplan', {
+      state: data,
+    })
   }
 
 

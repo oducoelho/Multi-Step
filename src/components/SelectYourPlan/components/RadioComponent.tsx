@@ -3,7 +3,7 @@ import Arcade from  '../../../assets/icon-arcade.svg'
 import Advanced from  '../../../assets/icon-advanced.svg'
 import Pro from  '../../../assets/icon-pro.svg'
 
-export const paymentMethods = {
+export const MonthlyOptions = {
   arcade: {
     img: Arcade,
     name: 'Arcade',
@@ -25,7 +25,7 @@ export const RadioComponent = () => {
 
   return (
     <div className='flex flex- justify-between gap-[32px]'>
-      {Object.entries(paymentMethods).map(([key, { img, name , price }]) => (
+      {Object.entries(MonthlyOptions).map(([key, { img, name , price }]) => (
         <MethodInput
           key={name}
           id={key}

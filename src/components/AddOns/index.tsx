@@ -1,11 +1,19 @@
 import '../../styles/global.css'
 import SideBar from '../../assets/bg-sidebar-desktop.svg'
-import Arcade from  '../assets/icon-arcade.svg'
-import Advanced from  '../assets/icon-advanced.svg'
-import Pro from  '../assets/icon-pro.svg'
 import { RadioComponent } from './components/RadioComponent'
+import { useNavigate } from 'react-router-dom'
 
 export const AddOns = () => {
+  const navigate = useNavigate()
+
+  const NextScreen = () => {
+    navigate('/summary')
+  }
+  const previousScreen = () => {
+    navigate('/selectyourplan')
+  }
+
+
   return (
     <div className='w-screen h-screen bg-[#f0f6ff] flex justify-center items-center'>
       <div className='bg-white p-5 w-[900px] rounded-xl flex'>
@@ -66,8 +74,18 @@ export const AddOns = () => {
             </div>
           </div>*/}
           <div className='flex justify-between pt-8'>
-            <button className='text-[#02295a] font-semibold rounded-lg'>Go back</button>
-            <button className='border bg-[#02295a] p-3 text-white font-semibold rounded-lg'>Next Step</button>
+          <button 
+              className='text-[#02295a] font-semibold rounded-lg hover:text-[#8619eb]'
+              onClick={previousScreen}
+            >
+              Go back
+            </button>
+            <button 
+              onClick={NextScreen}
+              className='border bg-[#02295a] p-3 text-white font-semibold rounded-lg'
+            >
+              Next Step
+            </button>
           </div>
         </div>
       </div>
